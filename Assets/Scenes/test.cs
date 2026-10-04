@@ -1,10 +1,10 @@
 using UnityEngine;
-using UnityEngine.inputSystem;
+
 
 public class test : MonoBehaviour
 {
 
-    public GameObject test;
+    public GameObject hi;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -17,9 +17,9 @@ public class test : MonoBehaviour
     {
         
     }
-    public void OnInteract()
+    public void Interact()
     {
-        test.SetActive(true);
-        GameObject.SetActive(false);
+        hi.active = false;
+        
     }
 }
