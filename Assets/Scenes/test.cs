@@ -5,6 +5,7 @@ public class test : MonoBehaviour
 {
 
     public GameObject hi;
+    private bool ah = true;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -19,7 +20,17 @@ public class test : MonoBehaviour
     }
     public void Interact()
     {
-        hi.active = false;
-        
+        if (ah == true)
+        {
+            hi.SetActive(false);
+            ah = false;
+        }
+        else if (ah == false)
+        {
+            hi.SetActive(true);
+            ah = true;
+        }
+
+
     }
 }
