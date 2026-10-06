@@ -1,10 +1,10 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class inptuTest : MonoBehaviour
+public class inputTest : MonoBehaviour
 {
-    public GameObject hi;
-    private bool ah = true;
+    public GameObject Pc;
+    private bool isActive = true;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -18,17 +18,17 @@ public class inptuTest : MonoBehaviour
     }
     public void OnInteract(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        if (context.started)
         {
-            if (ah == true)
+            if (isActive == true)
             {
-                hi.SetActive(false);
-                ah = false;
+                Pc.SetActive(false);
+                isActive = false;
             }
-            else if (ah == false)
+            else if (isActive == false)
             {
-                hi.SetActive(true);
-                ah = true;
+                Pc.SetActive(true);
+                isActive = true;
             }
         }
             
