@@ -65,8 +65,8 @@ public class CardController : MonoBehaviour
             if (secondSelected == null)
             {
                 secondSelected = card;
-                StartCoroutine("CheckMatching",(a: firstSelected, b: secondSelected));
-                //CheckMatching(firstSelected, secondSelected);
+                StartCoroutine(CheckMatching(firstSelected, secondSelected));
+                
                 firstSelected = null;
                 secondSelected = null;
                 
@@ -74,7 +74,7 @@ public class CardController : MonoBehaviour
         }
     }
 
-    IEnumerable CheckMatching(CardScript a, CardScript b)
+    IEnumerator CheckMatching(CardScript a, CardScript b)
     {
         yield return new WaitForSeconds(0.5f);
         if(a.IconSprite == b.IconSprite)
