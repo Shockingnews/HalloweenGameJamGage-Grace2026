@@ -11,6 +11,13 @@ public class CardScript : MonoBehaviour
 
     public bool isSelected;
 
+    public CardController controller;
+
+    public void OnCardClick()
+    {
+        controller.SetSelected(this);
+    }
+
     public void SetIconSprite(Sprite sprite)
     {
         IconSprite = sprite;

@@ -5,13 +5,20 @@ using System.Collections.Generic;
 
 public class CardController : MonoBehaviour
 {
-    [SerializeField] CardController cardPrefab;
+    [SerializeField] CardScript cardPrefab;
     [SerializeField] Transform gridTransform;
     [SerializeField] Sprite[] sprites;
 
     private List<Sprite> spritePair;
 
+    CardScript firstSelected;
+    CardScript secondSelected;
 
+    void Start()
+    {
+        PrepareSprites();
+        CreateCards();
+    }
     private void PrepareSprites()
     {
         spritePair = new List<Sprite>();
@@ -27,8 +34,9 @@ public class CardController : MonoBehaviour
     {
         for (int i = 0; i < spritePair.Count; i++)
         {
-            CardController card = Instantiate(cardPrefab,gridTransform);
+            CardScript card = Instantiate(cardPrefab,gridTransform);
             card.SetIconSprite(spritePair[i]);
+            card.controller = this;
         } 
     }
 
@@ -41,6 +49,42 @@ public class CardController : MonoBehaviour
             Sprite temp = spritesList[i];
             spritesList[i] = spritesList[randomIndex];
             spritesList[randomIndex] = temp;
+        }
+    }
+
+    public void SetSelected(CardScript card)
+    {
+        if(card.isSelected == false)
+        {
+            card.Show();
+            if(firstSelected == null)
+            {
+                firstSelected = card;
+                return;
+            }
+            if (secondSelected == null)
+            {
+                secondSelected = card;
+                StartCoroutine("CheckMatching",(a: firstSelected, b: secondSelected));
+                //CheckMatching(firstSelected, secondSelected);
+                firstSelected = null;
+                secondSelected = null;
+                
+            }
+        }
+    }
+
+    IEnumerable CheckMatching(CardScript a, CardScript b)
+    {
+        yield return new WaitForSeconds(0.5f);
+        if(a.IconSprite == b.IconSprite)
+        {
+
+        }
+        else
+        {
+            a.Hide();
+            b.Hide();
         }
     }
 }
