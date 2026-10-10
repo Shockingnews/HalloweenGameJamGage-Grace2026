@@ -11,6 +11,10 @@ public class CompletionTracker : MonoBehaviour
         {
             // activate win ui and end the game
         }
+        else
+        {
+            Debug.Log("not Done");
+        }
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

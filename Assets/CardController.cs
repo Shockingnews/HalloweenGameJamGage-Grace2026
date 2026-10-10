@@ -13,7 +13,7 @@ public class CardController : MonoBehaviour
 
     private int count;
 
-    CompletionTracker completion;
+    public CompletionTracker completion;
 
     CardScript firstSelected;
     CardScript secondSelected;
@@ -88,6 +88,7 @@ public class CardController : MonoBehaviour
             {
                 Debug.Log("win");
                 CompletionTracker.wins += 1;
+                completion.CheckWins();
                 Destroy(gameObject);
 
             }
