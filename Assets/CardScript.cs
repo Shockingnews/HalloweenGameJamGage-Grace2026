@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class CardScript : MonoBehaviour
 {
+     
     [SerializeField] private Image cardIcon;
     public Sprite hiddenIconSprite;
     public Sprite IconSprite;

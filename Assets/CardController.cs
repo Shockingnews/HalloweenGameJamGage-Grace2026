@@ -11,6 +11,10 @@ public class CardController : MonoBehaviour
 
     private List<Sprite> spritePair;
 
+    private int count;
+
+    CompletionTracker completion;
+
     CardScript firstSelected;
     CardScript secondSelected;
 
@@ -79,7 +83,14 @@ public class CardController : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         if(a.IconSprite == b.IconSprite)
         {
+            count++;
+            if(count == 3)
+            {
+                Debug.Log("win");
+                CompletionTracker.wins += 1;
+                Destroy(gameObject);
 
+            }
         }
         else
         {
