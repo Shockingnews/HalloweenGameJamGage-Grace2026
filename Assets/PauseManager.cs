@@ -7,26 +7,23 @@ public class PauseManager : MonoBehaviour
 {
 
     public GameObject PauseUI;
-    public GameObject buttons;
-    private GameObject buttonsOne;
-    private Button _buttonsOne;
-    private Button[] test;
-    //private GameObject buttonsTwo;
-    //private GameObject buttonsThree;
+    public GameObject buttonObject;
+    
+    private Button[] buttons;
+    
 
 
     void start()
     {
         PauseUI.active = false;
-        //_buttonsOne = transform.Find("PuzzleOne").gameObject.GetComponent<Button>();
-         //= buttonsOne.GetComponent<Button>();
+        
 
     }
 
     void Awake()
     {
-        test = buttons.GetComponentsInChildren<Button>();
-        //_buttonsOne = transform.Find("PuzzleOne").gameObject.GetComponent<Button>();
+        buttons = buttonObject.GetComponentsInChildren<Button>();
+        
 
     }
 
@@ -41,8 +38,8 @@ public class PauseManager : MonoBehaviour
     public void Resume()
     {
 
-        //_buttonsOne.enabled = true;
-        foreach (Button b in test)
+        
+        foreach (Button b in buttons)
         {
             b.enabled = true;
         }
@@ -61,21 +58,21 @@ public class PauseManager : MonoBehaviour
             {
 
                 PauseUI.active = true;
-                foreach(Button b in test)
+                foreach(Button b in buttons)
                 {
                     b.enabled = false;
                 }
-                //_buttonsOne.enabled = false;
+                
 
 
             }
             else
             {
-                foreach (Button b in test)
+                foreach (Button b in buttons)
                 {
                     b.enabled = true;
                 }
-                //_buttonsOne.enabled = true;
+                
                 PauseUI.active = false;
 
             }
