@@ -9,6 +9,9 @@ public class DialogueManager : MonoBehaviour
     public TMP_Text dialogueText;
     public bool inText = false;
 
+    private float timer = 5f;
+    private bool activeTimer = false;
+
     [SerializeField] private GameObject dialogueImg;
     private Queue<string> sentences;
 
@@ -16,6 +19,14 @@ public class DialogueManager : MonoBehaviour
     {
         sentences = new Queue<string>();
        
+    }
+
+    void Update()
+    {
+        if (activeTimer)
+        {
+            timer -= Time.deltaTime;
+        }
     }
 
     public void StartDialogue(Dialogue dialogue)
@@ -28,12 +39,17 @@ public class DialogueManager : MonoBehaviour
 
         sentences.Clear();
 
+        
 
         foreach (string sentence in dialogue.sentences)
         {
             sentences.Enqueue(sentence);
         }
-        DisplayNextSentence();
+        
+            DisplayNextSentence();
+            
+        
+        
 
     }
 
@@ -41,6 +57,7 @@ public class DialogueManager : MonoBehaviour
     {
         if (sentences.Count == 0)
         {
+            
             EndDialogue();
             return;
 
@@ -52,8 +69,16 @@ public class DialogueManager : MonoBehaviour
     }
     void EndDialogue()
     {
-        dialogueImg.SetActive(false);
-        inText = false;
-        Debug.Log("false");
+        activeTimer = true;
+        if (timer <= 0)
+        {
+            
+            activeTimer = false;
+            timer = 5f;
+            dialogueImg.SetActive(false);
+            inText = false;
+            Debug.Log("false");
+        }
+        
     }
 }

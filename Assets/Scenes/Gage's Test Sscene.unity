@@ -6200,6 +6200,8 @@ MonoBehaviour:
   manager: {fileID: 1829293700}
   loseManager: {fileID: 8176718}
   timer: 0
+  dialogueTime: 0
+  startDialogue: 0
 --- !u!4 &1663050319
 Transform:
   m_ObjectHideFlags: 0
@@ -7278,7 +7280,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1858757356
 MonoBehaviour:
   m_ObjectHideFlags: 0
