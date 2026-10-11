@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class Timer : MonoBehaviour
 {
+    public Dialogue dialogue;
+    public DialogueManager manager;
+
     public Lose loseManager;
     private bool isActive = false;
     public float timer;
@@ -34,6 +37,21 @@ public class Timer : MonoBehaviour
     void StopTime()
     {
         isActive =false;
+        StartDialogue();
+    }
+
+    void StartDialogue()
+    {
+        if (manager.inText == true)
+        {
+
+            Debug.Log("true");
+            manager.DisplayNextSentence();
+
+
+
+        }
+        else { manager.StartDialogue(dialogue); }
     }
 
     
