@@ -4,6 +4,8 @@ public class CompletionTracker : MonoBehaviour
 {
     private int completionWins = 3;
     static public int wins;
+    static public int loses;
+    public Lose loss;
 
      public void CheckWins() 
     {
@@ -25,6 +27,9 @@ public class CompletionTracker : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(loses >= 5)
+        {
+            loss.JumpScare();
+        }
     }
 }

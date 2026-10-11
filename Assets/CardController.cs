@@ -9,6 +9,8 @@ public class CardController : MonoBehaviour
     [SerializeField] Transform gridTransform;
     [SerializeField] Sprite[] sprites;
 
+    private float lost;
+
     private List<Sprite> spritePair;
 
     private int count;
@@ -97,6 +99,14 @@ public class CardController : MonoBehaviour
         {
             a.Hide();
             b.Hide();
+
+            lost += 1;
+            if(lost  == 3)
+            {
+                lost = 0;
+                CompletionTracker.loses += 1;
+            }
+            
         }
     }
 }
