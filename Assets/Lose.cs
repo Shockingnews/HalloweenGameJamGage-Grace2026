@@ -4,8 +4,8 @@ public class Lose : MonoBehaviour
 {
     public GameObject jumpScare;
     public GameObject loseScreen;
-    private float timer;
-    private bool active = false;
+    public float timer;
+    public bool active = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -20,11 +20,13 @@ public class Lose : MonoBehaviour
         if (active)
         {
             timer -= Time.deltaTime;
+            if (timer <= 0f)
+            {
+                loseScreen.SetActive(false);
+                LoseScreen();
+            }
         }
-        if (timer <= 0f)
-        {
-
-        }
+        
     }
     public void JumpScare()
     {
@@ -36,5 +38,6 @@ public class Lose : MonoBehaviour
     {
         jumpScare.SetActive(false);
         loseScreen.SetActive(true);
+        active = false;
     }
 }

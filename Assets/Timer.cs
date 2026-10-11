@@ -4,7 +4,7 @@ public class Timer : MonoBehaviour
 {
     public Lose loseManager;
     private bool isActive = false;
-    private float timer;
+    public float timer;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -17,13 +17,14 @@ public class Timer : MonoBehaviour
         if (isActive)
         {
             timer -= Time.deltaTime;
+            if (timer <= 0)
+            {
+                // jump scare and end game
+                StopTime();
+                loseManager.JumpScare();
+            }
         }
-        if(timer <= 0)
-        {
-            // jump scare and end game
-            StopTime();
-            loseManager.JumpScare();
-        }
+        
     }
     public void StartTime()
     {
