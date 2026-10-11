@@ -828,9 +828,18 @@ MonoBehaviour:
   cardPrefab: {fileID: 6944897745963253063, guid: 783a2674742ea994fa51cebb5227e208, type: 3}
   gridTransform: {fileID: 1066585712}
   sprites:
-  - {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
-  - {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
-  - {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: -712631045867808456, guid: b670ab75dde984907b8570040daa08c5, type: 3}
+  - {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
+  - {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  dialogue:
+    name: Player
+    sentences:
+    - The card project Complete, now what's left.
+  dialoguetwo:
+    name: player
+    sentences:
+    - noo how'd i mess up
+  manager: {fileID: 1829293700}
   completion: {fileID: 1810005046}
 --- !u!4 &162508856
 Transform:
@@ -3319,7 +3328,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &960056471
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4751,6 +4760,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerColision
   completion: {fileID: 1810005046}
+  dialogue:
+    name: player
+    sentences:
+    - Well That was simple I wonder if there all like that.
+  manager: {fileID: 1829293700}
 --- !u!1 &1263581201
 GameObject:
   m_ObjectHideFlags: 0
