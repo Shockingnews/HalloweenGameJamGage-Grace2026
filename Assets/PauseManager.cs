@@ -8,6 +8,8 @@ public class PauseManager : MonoBehaviour
 
     public GameObject PauseUI;
     public GameObject buttonObject;
+
+    
     
     private Button[] buttons;
     
@@ -82,6 +84,11 @@ public class PauseManager : MonoBehaviour
 
     public void DisableGame()
     {
-
+        
+        foreach (Button b in buttons)
+        {
+            b.enabled = false;
+        }
+        
     }
 }
