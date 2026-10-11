@@ -11,6 +11,7 @@ public class Timer : MonoBehaviour
     private int randomTime;
     public float dialogueTime;
     public bool startDialogue = false;
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -67,6 +68,10 @@ public class Timer : MonoBehaviour
     {
         isActive =false;
         StartDialogue();
+    }
+    public void PuaseTime()
+    {
+        isActive = false;
     }
 
     void StartDialogue()

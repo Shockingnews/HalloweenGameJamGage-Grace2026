@@ -8,9 +8,12 @@ public class PauseManager : MonoBehaviour
 
     public GameObject PauseUI;
     public GameObject buttonObject;
+    public GameObject ball;
+    public MazeInput maze;
+    public Timer timer;
 
-    
-    
+
+    private Rigidbody2D rb;
     private Button[] buttons;
     
 
@@ -25,7 +28,7 @@ public class PauseManager : MonoBehaviour
     void Awake()
     {
         buttons = buttonObject.GetComponentsInChildren<Button>();
-        
+        rb = ball.GetComponent<Rigidbody2D>();
 
     }
 
@@ -45,8 +48,9 @@ public class PauseManager : MonoBehaviour
         {
             b.enabled = true;
         }
-
+        rb.WakeUp();
         PauseUI.active = false;
+        maze.enabled = true;
 
 
     }
@@ -64,8 +68,10 @@ public class PauseManager : MonoBehaviour
                 {
                     b.enabled = false;
                 }
-                
 
+                rb.Sleep();
+                maze.enabled = false;
+                timer.PuaseTime();
 
             }
             else
@@ -76,7 +82,9 @@ public class PauseManager : MonoBehaviour
                 }
                 
                 PauseUI.active = false;
-
+                rb.WakeUp();
+                maze.enabled = true;
+                timer.StartTime();
             }
 
         }
@@ -89,6 +97,8 @@ public class PauseManager : MonoBehaviour
         {
             b.enabled = false;
         }
-        
+        rb.Sleep();
+        maze.enabled = false;
+
     }
 }
