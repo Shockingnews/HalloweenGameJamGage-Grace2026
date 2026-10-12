@@ -21,6 +21,7 @@ public class Triva : MonoBehaviour
     public Dialogue dialogue;
     public DialogueManager manager;
     private bool cardsShuffled = false;
+    public CompletionTracker winTracker;
 
 
     private int score;
@@ -130,12 +131,14 @@ public class Triva : MonoBehaviour
                 manager.StartDialogue(dialogue);
                 manager.inText = true;
                 Debug.Log("you win");
+                CompletionTracker.wins += 1;
             }
             else
             {
                 manager.StartDialogue(dialogue);
                 manager.inText = true;
                 Debug.Log("you lose");
+                CompletionTracker.loses += 1;
             }
         }
     }
