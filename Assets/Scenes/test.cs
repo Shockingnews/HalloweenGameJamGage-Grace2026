@@ -8,6 +8,9 @@ public class test : MonoBehaviour
     public GameObject screenTwo;
     public GameObject screenThree;
     private bool isActive = true;
+    public GameObject PC;
+    public GameObject PCScreen;
+    public GameObject staticPc;
     public void Interact()
     {
         if (isActive == true)
@@ -52,5 +55,21 @@ public class test : MonoBehaviour
         }
 
 
+    }
+    public void EnterPC()
+    {
+        if (isActive == true)
+        {
+            PC.SetActive(false);
+            PCScreen.SetActive(true);
+            isActive = false;
+            //staticPc.SetActive(false);
+        }
+        else if (isActive == false)
+        {
+            PC.SetActive(true);
+            PCScreen.SetActive(false);
+            isActive = true;
+        }
     }
 }

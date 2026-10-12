@@ -50,15 +50,22 @@ public class Timer : MonoBehaviour
 
             }
             else { manager.StartDialogue(dialogue); }
+
             
-            
+
         }
-        if(manager.inText == false)
+        if(manager.timer <= 1)
+        {
+            manager.inText = false;
+        }
+        
+        if (manager.inText == false)
         {
             startDialogue = false;
             StartTime();
         }
-        
+
+
     }
     public void StartTime()
     {

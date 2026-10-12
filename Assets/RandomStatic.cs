@@ -25,8 +25,10 @@ public class RandomStatic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        staticTime -= Time.deltaTime;
         if(staticTime <= 0)
         {
+            active = true;
             _static.SetActive(true);
             if (active)
             {
@@ -50,8 +52,12 @@ public class RandomStatic : MonoBehaviour
     }
     public void EnableControls()
     {
-        pauseManager.DisableGame();
+        //pauseManager.DisableGame();
         randomTime = Random.Range(25, 60);
+        staticTime = randomTime;
+        timer = 10f;
         _static.SetActive(false);
+        staticColor.a = 0f;
+        active = false;
     }
 }

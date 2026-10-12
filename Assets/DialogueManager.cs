@@ -9,7 +9,7 @@ public class DialogueManager : MonoBehaviour
     public TMP_Text dialogueText;
     public bool inText = false;
 
-    private float timer = 2f;
+    public float timer = 2f;
     private bool activeTimer = false;
 
 
@@ -28,6 +28,11 @@ public class DialogueManager : MonoBehaviour
         if (activeTimer)
         {
             timer -= Time.deltaTime;
+        }
+        if(timer < 0)
+        {
+            activeTimer = false;
+            EndDialogue();
         }
     }
 
@@ -74,13 +79,7 @@ public class DialogueManager : MonoBehaviour
         
 
             
-        if (sentences.Count == 0)
-        {
-            
-            EndDialogue();
-            return;
-
-        }
+        
         if (!activeTimer)
         {
             
@@ -96,8 +95,15 @@ public class DialogueManager : MonoBehaviour
             string sentence = sentences.Dequeue();
             dialogueText.text = sentence;
             activeTimer = false;
+
             timer = 2f;
-            
+            if (sentences.Count == 0)
+            {
+
+                EndDialogue();
+                return;
+
+            }
         }
         
             
