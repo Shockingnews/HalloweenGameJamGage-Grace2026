@@ -45,22 +45,24 @@ public class Timer : MonoBehaviour
 
                 Debug.Log("true");
                 manager.DisplayNextSentence();
-
+                
 
 
             }
             else { manager.StartDialogue(dialogue); }
-            if(manager.inText == false)
-            {
-                startDialogue = false;
-                StartTime();
-            }
             
+            
+        }
+        if(manager.inText == false)
+        {
+            startDialogue = false;
+            StartTime();
         }
         
     }
     public void StartTime()
     {
+
         isActive = true;
     }
 
@@ -78,7 +80,7 @@ public class Timer : MonoBehaviour
     {
         
         startDialogue = true;
-        randomTime = Random.Range(0, 60);
+        randomTime = Random.Range(15, 60);
         dialogueTime = randomTime;
     }
 

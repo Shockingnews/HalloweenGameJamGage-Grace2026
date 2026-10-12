@@ -93,11 +93,11 @@ public class DialogueManager : MonoBehaviour
 
         if (timer <= 0)
         {
-            
-            activeTimer = false;
-            timer = 5f;
             string sentence = sentences.Dequeue();
             dialogueText.text = sentence;
+            activeTimer = false;
+            timer = 2f;
+            
         }
         
             
@@ -108,16 +108,21 @@ public class DialogueManager : MonoBehaviour
     }
     void EndDialogue()
     {
-        activeTimer = true;
-        if (timer <= 0)
-        {
-            
-            activeTimer = false;
+        activeTimer = false;
             timer = 2f;
             dialogueImg.SetActive(false);
             inText = false;
             Debug.Log("false");
-        }
-        
+       //activeTimer = true;
+        //if (timer <= 0)
+        //{
+
+        //    activeTimer = false;
+        //    timer = 2f;
+        //    dialogueImg.SetActive(false);
+        //    inText = false;
+        //    Debug.Log("false");
+        //}
+
     }
 }

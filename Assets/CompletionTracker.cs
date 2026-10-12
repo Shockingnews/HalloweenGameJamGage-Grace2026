@@ -33,6 +33,8 @@ public class CompletionTracker : MonoBehaviour
     {
         if(loses >= 5)
         {
+
+            Debug.Log("hityo");
             loss.JumpScare();
         }
     }
