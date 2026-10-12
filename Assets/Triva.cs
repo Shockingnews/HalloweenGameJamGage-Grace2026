@@ -13,11 +13,15 @@ public class Triva : MonoBehaviour
     public List<string> questions = new List<string>();
     public List<string> answer = new List<string>();
     private List<(string, string, string, string)> playerAnswerChecker = new List<(string, string, string, string)>();
+    public TMP_Text questionText;
     public TMP_Text ButtonOne;
     public TMP_Text ButtonTwo;
     public TMP_Text ButtonThree;
     public TMP_Text ButtonFour;
-    
+    public Dialogue dialogue;
+    public DialogueManager manager;
+    private bool cardsShuffled = false;
+
 
     private int score;
     //private int randomnum1 = new Random();
@@ -32,9 +36,11 @@ public class Triva : MonoBehaviour
         {
 
             score += 1;
+            
         }
-
+        Debug.Log("four");
         playerAnswerChecker.Remove(playerAnswerChecker[0]);
+        cardsShuffled = false;
         count += 1;
     }
     public void AnswerThree()
@@ -43,9 +49,11 @@ public class Triva : MonoBehaviour
         {
 
             score += 1;
+            
         }
-
+        Debug.Log("three");
         playerAnswerChecker.Remove(playerAnswerChecker[0]);
+        cardsShuffled = false;
         count += 1;
     }
     public void AnswerTwo()
@@ -55,9 +63,11 @@ public class Triva : MonoBehaviour
         {
             
             score += 1;
+            
         }
-
+        Debug.Log("two");
         playerAnswerChecker.Remove(playerAnswerChecker[0]);
+        cardsShuffled = false;
         count += 1;
     }
     public void AnswerOne()
@@ -67,14 +77,27 @@ public class Triva : MonoBehaviour
 
                     //Console.WriteLine("Correct");
                     score += 1;
-                }
-                
-                playerAnswerChecker.Remove(playerAnswerChecker[0]);
-                count += 1;
+            
+        }
+        Debug.Log("one");
+        playerAnswerChecker.Remove(playerAnswerChecker[0]);
+        cardsShuffled = false;
+        count += 1;
     }
     // Update is called once per frame
     void Update()
     {
+        CheckStatus();
+        if (manager.inText == true)
+        {
+
+            Debug.Log("true");
+            manager.DisplayNextSentence();
+
+
+
+        }
+        
         for (int i = 0; i < questions.Count; i++)
         {
             
@@ -82,55 +105,77 @@ public class Triva : MonoBehaviour
             if (i == count)
             {
                 Debug.Log("went through");
-                ButtonOne.text = answer[i];
-                ButtonTwo.text = fakeAnswers[i].fristString;
-                ButtonThree.text = fakeAnswers[i].secondString;
-                ButtonFour.text = fakeAnswers[i].thirdString;
+                
                 test = i;
                 //count = 0;
-
-                shuffleAnswers();
+                if (!cardsShuffled)
+                {
+                    shuffleAnswers();
+                }
+                
 
 
 
 
             }
         }
-        CheckStatus();
+        
     }
     void CheckStatus()
     {
-        if(count == 3)
+        if(count == 2)
         {
             if(score >= 1)
             {
+                manager.StartDialogue(dialogue);
+                manager.inText = true;
                 Debug.Log("you win");
             }
             else
             {
+                manager.StartDialogue(dialogue);
+                manager.inText = true;
                 Debug.Log("you lose");
             }
         }
     }
         void shuffleAnswers()
         {
+        questionText.text = questions[test];
             int num = Random.Range(1, 5);
             if (num == 1)
             {
                 playerAnswerChecker.Add((answer[test], fakeAnswers[test].fristString, fakeAnswers[test].secondString, fakeAnswers[test].thirdString));
+                ButtonOne.text = answer[test];
+                ButtonTwo.text = fakeAnswers[test].fristString;
+                ButtonThree.text = fakeAnswers[test].secondString;
+                ButtonFour.text = fakeAnswers[test].thirdString;
             }
             if (num == 2)
             {
                 playerAnswerChecker.Add((fakeAnswers[test].secondString, answer[test], fakeAnswers[test].fristString, fakeAnswers[test].thirdString));
+                ButtonOne.text = fakeAnswers[test].secondString;
+                ButtonTwo.text = answer[test];
+                ButtonThree.text = fakeAnswers[test].fristString;
+                ButtonFour.text = fakeAnswers[test].thirdString;
             }
             if (num == 3)
             {
                 playerAnswerChecker.Add((fakeAnswers[test].fristString, fakeAnswers[test].thirdString, answer[test], fakeAnswers[test].secondString));
+                ButtonOne.text = fakeAnswers[test].fristString;
+                ButtonTwo.text = fakeAnswers[test].thirdString;
+                ButtonThree.text = answer[test];
+                ButtonFour.text = fakeAnswers[test].secondString;
             }
             if (num == 4)
             {
                 playerAnswerChecker.Add((fakeAnswers[test].thirdString, fakeAnswers[test].fristString, fakeAnswers[test].secondString, answer[test]));
+                ButtonOne.text = fakeAnswers[test].thirdString;
+                ButtonTwo.text = fakeAnswers[test].fristString;
+                ButtonThree.text = fakeAnswers[test].secondString;
+                ButtonFour.text = answer[test];
             }
+            cardsShuffled = true;
         }
 
 
