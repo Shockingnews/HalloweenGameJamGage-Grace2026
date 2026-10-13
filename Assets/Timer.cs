@@ -11,6 +11,7 @@ public class Timer : MonoBehaviour
     private int randomTime;
     public float dialogueTime;
     public bool startDialogue = false;
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -44,22 +45,31 @@ public class Timer : MonoBehaviour
 
                 Debug.Log("true");
                 manager.DisplayNextSentence();
-
+                
 
 
             }
             else { manager.StartDialogue(dialogue); }
-            if(manager.inText == false)
-            {
-                startDialogue = false;
-                StartTime();
-            }
+
             
+
+        }
+        if(manager.timer <= 1)
+        {
+            manager.inText = false;
         }
         
+        if (manager.inText == false)
+        {
+            startDialogue = false;
+            //StartTime();
+        }
+
+
     }
     public void StartTime()
     {
+
         isActive = true;
     }
 
@@ -68,12 +78,16 @@ public class Timer : MonoBehaviour
         isActive =false;
         StartDialogue();
     }
+    public void PuaseTime()
+    {
+        isActive = false;
+    }
 
     void StartDialogue()
     {
         
         startDialogue = true;
-        randomTime = Random.Range(0, 60);
+        randomTime = Random.Range(15, 60);
         dialogueTime = randomTime;
     }
 

@@ -9,6 +9,10 @@ public class CardController : MonoBehaviour
     [SerializeField] Transform gridTransform;
     [SerializeField] Sprite[] sprites;
 
+    public Dialogue dialogue;
+    public Dialogue dialoguetwo;
+    public DialogueManager manager;
+
     private float lost;
 
     private List<Sprite> spritePair;
@@ -24,6 +28,23 @@ public class CardController : MonoBehaviour
     {
         PrepareSprites();
         CreateCards();
+    }
+    void Update()
+    {
+        
+            if (manager.inText == true)
+            {
+
+                Debug.Log("true");
+                manager.DisplayNextSentence();
+
+
+
+            }
+            
+        
+
+
     }
     private void PrepareSprites()
     {
@@ -91,7 +112,17 @@ public class CardController : MonoBehaviour
                 Debug.Log("win");
                 CompletionTracker.wins += 1;
                 completion.CheckWins();
-                Destroy(gameObject);
+                //Destroy(gameObject);
+                if (manager.inText == true)
+                {
+
+                    Debug.Log("true");
+                    manager.DisplayNextSentence();
+
+
+
+                }
+                else { manager.StartDialogue(dialogue); }
 
             }
         }
@@ -105,6 +136,16 @@ public class CardController : MonoBehaviour
             {
                 lost = 0;
                 CompletionTracker.loses += 1;
+                if (manager.inText == true)
+                {
+
+                    Debug.Log("true");
+                    manager.DisplayNextSentence();
+
+
+
+                }
+                else { manager.StartDialogue(dialoguetwo); }
             }
             
         }

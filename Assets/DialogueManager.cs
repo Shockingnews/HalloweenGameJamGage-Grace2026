@@ -9,8 +9,10 @@ public class DialogueManager : MonoBehaviour
     public TMP_Text dialogueText;
     public bool inText = false;
 
-    private float timer = 5f;
+    public float timer = 2f;
     private bool activeTimer = false;
+
+
 
     [SerializeField] private GameObject dialogueImg;
     private Queue<string> sentences;
@@ -27,6 +29,11 @@ public class DialogueManager : MonoBehaviour
         {
             timer -= Time.deltaTime;
         }
+        if(timer < 0)
+        {
+            activeTimer = false;
+            EndDialogue();
+        }
     }
 
     public void StartDialogue(Dialogue dialogue)
@@ -35,18 +42,32 @@ public class DialogueManager : MonoBehaviour
         dialogueImg.SetActive(true);
         
 
+
+
+
         Debug.Log("d");
 
         sentences.Clear();
 
-        
+        int test = 0;
 
         foreach (string sentence in dialogue.sentences)
         {
+            test += 1;
+            
             sentences.Enqueue(sentence);
+            if (test == 1)
+            {
+                dialogueText.text = sentence;
+            }
         }
         
-            DisplayNextSentence();
+
+        DisplayNextSentence();
+        
+
+            
+            
             
         
         
@@ -55,30 +76,59 @@ public class DialogueManager : MonoBehaviour
 
     public void DisplayNextSentence()
     {
-        if (sentences.Count == 0)
-        {
+        
+
             
-            EndDialogue();
-            return;
+        
+        
+
+        
+
+        if (timer <= 0)
+        {
+            string sentence = sentences.Dequeue();
+            dialogueText.text = sentence;
+            activeTimer = false;
+
+            timer = 2f;
+            if (sentences.Count == 0)
+            {
+
+                EndDialogue();
+                return;
+
+            }
+        }
+
+
+        if (!activeTimer)
+        {
+
+
+            activeTimer = true;
 
         }
 
-        string sentence = sentences.Dequeue();
-        dialogueText.text = sentence;
+
 
     }
     void EndDialogue()
     {
-        activeTimer = true;
-        if (timer <= 0)
-        {
-            
-            activeTimer = false;
-            timer = 5f;
+        activeTimer = false;
+            timer = 2f;
             dialogueImg.SetActive(false);
             inText = false;
             Debug.Log("false");
-        }
-        
+       //activeTimer = true;
+        //if (timer <= 0)
+        //{
+
+        //    activeTimer = false;
+        //    timer = 2f;
+        //    dialogueImg.SetActive(false);
+        //    inText = false;
+        //    Debug.Log("false");
+        //}
+
     }
 }
