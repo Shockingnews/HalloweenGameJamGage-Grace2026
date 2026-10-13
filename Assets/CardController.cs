@@ -78,6 +78,14 @@ public class CardController : MonoBehaviour
             spritesList[randomIndex] = temp;
         }
     }
+    public void HideCards(CardScript card)
+    {
+        card.Hide();
+    }
+    public void HideALL()
+    {
+
+    }
 
     public void SetSelected(CardScript card)
     {

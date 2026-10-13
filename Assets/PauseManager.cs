@@ -11,6 +11,7 @@ public class PauseManager : MonoBehaviour
     public GameObject ball;
     public MazeInput maze;
     public Timer timer;
+    public GameObject toutrial;
 
     public RandomStatic randomStatic;
 
@@ -23,7 +24,9 @@ public class PauseManager : MonoBehaviour
     void start()
     {
         PauseUI.active = false;
-        
+        DisableGame();
+
+
 
     }
 
@@ -54,6 +57,23 @@ public class PauseManager : MonoBehaviour
         PauseUI.active = false;
         maze.enabled = true;
         randomStatic.activeStaticTimer = true;
+        
+
+
+    }
+    public void EndTourtorial()
+    {
+
+
+        foreach (Button b in buttons)
+        {
+            b.enabled = true;
+        }
+        rb.WakeUp();
+        PauseUI.active = false;
+        maze.enabled = true;
+        randomStatic.activeStaticTimer = true;
+        toutrial.active = false;
 
 
     }
@@ -104,6 +124,7 @@ public class PauseManager : MonoBehaviour
         }
         rb.Sleep();
         maze.enabled = false;
+        
 
     }
 }

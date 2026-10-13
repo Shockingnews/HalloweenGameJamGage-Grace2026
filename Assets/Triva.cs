@@ -19,6 +19,7 @@ public class Triva : MonoBehaviour
     public TMP_Text ButtonThree;
     public TMP_Text ButtonFour;
     public Dialogue dialogue;
+    public Dialogue failDialogue;
     public DialogueManager manager;
     private bool cardsShuffled = false;
     public CompletionTracker winTracker;
@@ -33,47 +34,47 @@ public class Triva : MonoBehaviour
     }
     public void AnswerFour()
     {
-        if (playerAnswerChecker[0].Item4 == answer[test])
+        if (playerAnswerChecker[test].Item4 == answer[test])
         {
 
             score += 1;
             
         }
         Debug.Log("four");
-        playerAnswerChecker.Remove(playerAnswerChecker[0]);
+        
         cardsShuffled = false;
         count += 1;
     }
     public void AnswerThree()
     {
-        if (playerAnswerChecker[0].Item3 == answer[test])
+        if (playerAnswerChecker[test].Item3 == answer[test])
         {
 
             score += 1;
             
         }
         Debug.Log("three");
-        playerAnswerChecker.Remove(playerAnswerChecker[0]);
+        
         cardsShuffled = false;
         count += 1;
     }
     public void AnswerTwo()
     {
 
-        if (playerAnswerChecker[0].Item2 == answer[test])
+        if (playerAnswerChecker[test].Item2 == answer[test])
         {
             
             score += 1;
             
         }
         Debug.Log("two");
-        playerAnswerChecker.Remove(playerAnswerChecker[0]);
+        
         cardsShuffled = false;
         count += 1;
     }
     public void AnswerOne()
     {
-                if (playerAnswerChecker[0].Item1 == answer[test])
+                if (playerAnswerChecker[test].Item1 == answer[test])
                 {
 
                     //Console.WriteLine("Correct");
@@ -81,7 +82,7 @@ public class Triva : MonoBehaviour
             
         }
         Debug.Log("one");
-        playerAnswerChecker.Remove(playerAnswerChecker[0]);
+        
         cardsShuffled = false;
         count += 1;
     }
@@ -122,11 +123,35 @@ public class Triva : MonoBehaviour
         }
         
     }
+    void Reset()
+    {
+        for (int i = 0; i < questions.Count; i++)
+        {
+            count = 0;  
+
+            if (i == count)
+            {
+                Debug.Log("went through");
+
+                test = i;
+                //count = 0;
+                if (!cardsShuffled)
+                {
+                    shuffleAnswers();
+                }
+
+
+
+
+
+            }
+        }
+    }
     void CheckStatus()
     {
-        if(count == 2)
+        if(count == 5)
         {
-            if(score >= 1)
+            if(score >= 3)
             {
                 if (manager.inText == true)
                 {
@@ -159,7 +184,7 @@ public class Triva : MonoBehaviour
 
 
                 }
-                else { manager.StartDialogue(dialogue); }
+                else { manager.StartDialogue(failDialogue); }
                 //manager.inText = true;
                 Debug.Log("you lose");
                 CompletionTracker.loses += 1;
@@ -168,6 +193,7 @@ public class Triva : MonoBehaviour
                     manager.inText = false; 
                 }
                 count = 10;
+                Reset();
             }
             if (manager.inText == false)
             {
