@@ -141,7 +141,8 @@ public class Triva : MonoBehaviour
                 //manager.inText = true;
                 Debug.Log("you win");
                 CompletionTracker.wins += 1;
-                if(CompletionTracker.wins == 1 || CompletionTracker.wins == 2 || CompletionTracker.wins == 3)
+                
+                if (CompletionTracker.wins == 1 || CompletionTracker.wins == 2 || CompletionTracker.wins == 3)
                 {
                     manager.inText = false;
                 }
@@ -168,7 +169,12 @@ public class Triva : MonoBehaviour
                 }
                 count = 10;
             }
+            if (manager.inText == false)
+            {
+                winTracker.CheckWins();
+            }
         }
+        
     }
         void shuffleAnswers()
         {

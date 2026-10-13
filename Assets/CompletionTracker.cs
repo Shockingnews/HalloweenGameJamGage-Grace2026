@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class CompletionTracker : MonoBehaviour
 {
-    private int completionWins = 2;
+    private int completionWins = 3;
     static public int wins;
     static public int loses;
     public Lose loss;
@@ -41,6 +41,7 @@ public class CompletionTracker : MonoBehaviour
 
     void endGame()
     {
+        Debug.Log("woooooooo");
         pcUi.SetActive(false);
         WinObject.SetActive(true);
         dialogue.SetActive(false);
