@@ -421,9 +421,9 @@ MonoBehaviour:
   cardPrefab: {fileID: 6944897745963253063, guid: 783a2674742ea994fa51cebb5227e208, type: 3}
   gridTransform: {fileID: 1284780690}
   sprites:
-  - {fileID: -712631045867808456, guid: b670ab75dde984907b8570040daa08c5, type: 3}
-  - {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
-  - {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  - {fileID: 1156340851328456402, guid: 7821454649c0df645a771eafdf590532, type: 3}
+  - {fileID: 5710208017464913842, guid: 7821454649c0df645a771eafdf590532, type: 3}
+  - {fileID: -5521206939350048877, guid: 7821454649c0df645a771eafdf590532, type: 3}
   dialogue:
     name: Player
     sentences:
@@ -10132,9 +10132,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6944897745963253063, guid: 783a2674742ea994fa51cebb5227e208, type: 3}
+      propertyPath: IconSprite
+      value: 
+      objectReference: {fileID: 3975213691538823563, guid: 7821454649c0df645a771eafdf590532, type: 3}
+    - target: {fileID: 6944897745963253063, guid: 783a2674742ea994fa51cebb5227e208, type: 3}
       propertyPath: controller
       value: 
       objectReference: {fileID: 64077430}
+    - target: {fileID: 6944897745963253063, guid: 783a2674742ea994fa51cebb5227e208, type: 3}
+      propertyPath: hiddenIconSprite
+      value: 
+      objectReference: {fileID: 3975213691538823563, guid: 7821454649c0df645a771eafdf590532, type: 3}
     - target: {fileID: 7463680120755072830, guid: 783a2674742ea994fa51cebb5227e208, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

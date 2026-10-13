@@ -91,7 +91,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CardScript
   cardIcon: {fileID: 8997112009649171119}
-  hiddenIconSprite: {fileID: 0}
+  hiddenIconSprite: {fileID: 3975213691538823563, guid: 7821454649c0df645a771eafdf590532, type: 3}
   IconSprite: {fileID: 0}
   isSelected: 0
   controller: {fileID: 0}
