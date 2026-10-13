@@ -1,0 +1,219 @@
+fileFormatVersion: 2
+guid: 188d631d1b1e4364fb1d8a6c4376db32
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -597188345251438812
+    second: Button_Sprite_0
+  - first:
+      213: -4735014759192805997
+    second: Button_Sprite_1
+  - first:
+      213: -2913292003343785928
+    second: Button_Sprite_2
+  - first:
+      213: 4100762739984832320
+    second: Button_Sprite_3
+  - first:
+      213: -3796332293633366
+    second: Button_Sprite_4
+  - first:
+      213: 7693732051876356042
+    second: Button_Sprite_5
+  - first:
+      213: -7268899723357873670
+    second: Button_Sprite_6
+  - first:
+      213: -1857075664594091116
+    second: Button_Sprite_7
+  - first:
+      213: -418606921601096893
+    second: Button_Sprite_8
+  - first:
+      213: 7419675253250932407
+    second: Button_Sprite_9
+  - first:
+      213: -3495968623075405504
+    second: Button_Sprite_10
+  - first:
+      213: -2919018510977942472
+    second: Button_Sprite_11
+  - first:
+      213: 4410320290802140487
+    second: Button_Sprite_12
+  - first:
+      213: 9119849258223983187
+    second: Button_Sprite_13
+  - first:
+      213: 6109974705808704062
+    second: Button_Sprite_14
+  - first:
+      213: -8348410826382813428
+    second: Button_Sprite_15
+  - first:
+      213: -1459533825425657313
+    second: Button_Sprite_16
+  - first:
+      213: -4670270361599305831
+    second: Button_Sprite_17
+  - first:
+      213: -6715468364426602465
+    second: Button_Sprite_18
+  - first:
+      213: 3007515909133775719
+    second: Button_Sprite_19
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Button_Sprite_0
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 110
+        width: 1387
+        height: 922
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42fd8413d5c56b7f0800000000000000
+      internalID: -597188345251438812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 8a4b3d9eb332d9d44b1b4975a6d43692
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Button_Sprite_0: -597188345251438812
+      Button_Sprite_1: -4735014759192805997
+      Button_Sprite_10: -3495968623075405504
+      Button_Sprite_11: -2919018510977942472
+      Button_Sprite_12: 4410320290802140487
+      Button_Sprite_13: 9119849258223983187
+      Button_Sprite_14: 6109974705808704062
+      Button_Sprite_15: -8348410826382813428
+      Button_Sprite_16: -1459533825425657313
+      Button_Sprite_17: -4670270361599305831
+      Button_Sprite_18: -6715468364426602465
+      Button_Sprite_19: 3007515909133775719
+      Button_Sprite_2: -2913292003343785928
+      Button_Sprite_3: 4100762739984832320
+      Button_Sprite_4: -3796332293633366
+      Button_Sprite_5: 7693732051876356042
+      Button_Sprite_6: -7268899723357873670
+      Button_Sprite_7: -1857075664594091116
+      Button_Sprite_8: -418606921601096893
+      Button_Sprite_9: 7419675253250932407
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
