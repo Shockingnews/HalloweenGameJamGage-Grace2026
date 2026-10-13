@@ -62,7 +62,7 @@ public class Timer : MonoBehaviour
         if (manager.inText == false)
         {
             startDialogue = false;
-            StartTime();
+            //StartTime();
         }
 
 

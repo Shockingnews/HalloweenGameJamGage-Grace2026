@@ -12,6 +12,8 @@ public class PauseManager : MonoBehaviour
     public MazeInput maze;
     public Timer timer;
 
+    public RandomStatic randomStatic;
+
 
     private Rigidbody2D rb;
     private Button[] buttons;
@@ -51,6 +53,7 @@ public class PauseManager : MonoBehaviour
         rb.WakeUp();
         PauseUI.active = false;
         maze.enabled = true;
+        randomStatic.activeStaticTimer = true;
 
 
     }
@@ -62,7 +65,7 @@ public class PauseManager : MonoBehaviour
 
             if (PauseUI.active == false)
             {
-
+                timer.PuaseTime();
                 PauseUI.active = true;
                 foreach(Button b in buttons)
                 {
@@ -72,6 +75,7 @@ public class PauseManager : MonoBehaviour
                 rb.Sleep();
                 maze.enabled = false;
                 timer.PuaseTime();
+                randomStatic.activeStaticTimer = false;
 
             }
             else
@@ -85,6 +89,7 @@ public class PauseManager : MonoBehaviour
                 rb.WakeUp();
                 maze.enabled = true;
                 timer.StartTime();
+                randomStatic.activeStaticTimer = true;
             }
 
         }

@@ -89,15 +89,15 @@ public class Triva : MonoBehaviour
     void Update()
     {
         CheckStatus();
-        if (manager.inText == true)
-        {
+        //if (manager.inText == true)
+        //{
 
-            Debug.Log("true");
-            manager.DisplayNextSentence();
+        //    Debug.Log("true");
+        //    manager.DisplayNextSentence();
 
+            
 
-
-        }
+        //}
         
         for (int i = 0; i < questions.Count; i++)
         {
@@ -128,17 +128,45 @@ public class Triva : MonoBehaviour
         {
             if(score >= 1)
             {
-                manager.StartDialogue(dialogue);
-                manager.inText = true;
+                if (manager.inText == true)
+                {
+
+                    Debug.Log("true");
+                    manager.DisplayNextSentence();
+
+
+
+                }
+                else { manager.StartDialogue(dialogue); }
+                //manager.inText = true;
                 Debug.Log("you win");
                 CompletionTracker.wins += 1;
+                if(CompletionTracker.wins == 1 || CompletionTracker.wins == 2 || CompletionTracker.wins == 3)
+                {
+                    manager.inText = false;
+                }
+                count = 10;
             }
             else
             {
-                manager.StartDialogue(dialogue);
-                manager.inText = true;
+                if (manager.inText == true)
+                {
+
+                    Debug.Log("true");
+                    manager.DisplayNextSentence();
+
+
+
+                }
+                else { manager.StartDialogue(dialogue); }
+                //manager.inText = true;
                 Debug.Log("you lose");
                 CompletionTracker.loses += 1;
+                if(CompletionTracker.loses == 1 || CompletionTracker.loses == 2 || CompletionTracker.loses == 3)
+                {
+                    manager.inText = false; 
+                }
+                count = 10;
             }
         }
     }

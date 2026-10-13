@@ -7,6 +7,7 @@ public class RandomStatic : MonoBehaviour
     private int randomTime;
     public float staticTime;
     public bool active = false;
+    public bool activeStaticTimer = false;
     public GameObject _static;
     private Image staticRenderer;
     private Color staticColor;
@@ -25,7 +26,11 @@ public class RandomStatic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        staticTime -= Time.deltaTime;
+        if (activeStaticTimer)
+        {
+            staticTime -= Time.deltaTime;
+        }
+        
         if(staticTime <= 0)
         {
             active = true;

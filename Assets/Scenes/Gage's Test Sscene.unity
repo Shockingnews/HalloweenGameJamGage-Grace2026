@@ -785,6 +785,7 @@ MonoBehaviour:
   ball: {fileID: 1254234831}
   maze: {fileID: 1919601279}
   timer: {fileID: 1663050318}
+  randomStatic: {fileID: 1467385090}
 --- !u!4 &106771536
 Transform:
   m_ObjectHideFlags: 0
@@ -7167,6 +7168,7 @@ MonoBehaviour:
   timer: 10
   staticTime: 0
   active: 0
+  activeStaticTimer: 0
   _static: {fileID: 720123194}
   pauseManager: {fileID: 106771535}
 --- !u!4 &1467385091

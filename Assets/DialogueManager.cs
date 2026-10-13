@@ -80,13 +80,7 @@ public class DialogueManager : MonoBehaviour
 
             
         
-        if (!activeTimer)
-        {
-            
-            
-            activeTimer = true;
-
-        }
+        
 
         
 
@@ -105,10 +99,16 @@ public class DialogueManager : MonoBehaviour
 
             }
         }
-        
-            
-        
-        
+
+
+        if (!activeTimer)
+        {
+
+
+            activeTimer = true;
+
+        }
+
 
 
     }
