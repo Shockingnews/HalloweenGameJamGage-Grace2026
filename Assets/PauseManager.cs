@@ -74,6 +74,7 @@ public class PauseManager : MonoBehaviour
         maze.enabled = true;
         randomStatic.activeStaticTimer = true;
         toutrial.active = false;
+        timer.isActive = true;
 
 
     }
@@ -124,6 +125,7 @@ public class PauseManager : MonoBehaviour
         }
         rb.Sleep();
         maze.enabled = false;
+
         
 
     }

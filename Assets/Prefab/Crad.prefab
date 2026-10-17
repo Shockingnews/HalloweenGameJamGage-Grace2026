@@ -61,7 +61,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -92,7 +92,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CardScript
   cardIcon: {fileID: 8997112009649171119}
   hiddenIconSprite: {fileID: 3975213691538823563, guid: 7821454649c0df645a771eafdf590532, type: 3}
-  IconSprite: {fileID: 0}
+  IconSprite: {fileID: 3975213691538823563, guid: 7821454649c0df645a771eafdf590532, type: 3}
+  screen: {fileID: 0}
   isSelected: 0
   controller: {fileID: 0}
 --- !u!114 &7535005854866455182

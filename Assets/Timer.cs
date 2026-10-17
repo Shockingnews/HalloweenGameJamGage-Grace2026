@@ -1,12 +1,17 @@
 using UnityEngine;
+using TMPro;
 
 public class Timer : MonoBehaviour
 {
+    [SerializeField] TextMeshProUGUI timerText;
+    [SerializeField] TextMeshProUGUI outSideTimerText;
+
     public Dialogue dialogue;
     public DialogueManager manager;
 
+
     public Lose loseManager;
-    private bool isActive = false;
+    public bool isActive = false;
     public float timer;
     private int randomTime;
     public float dialogueTime;
@@ -15,7 +20,7 @@ public class Timer : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        timer = 100f;
+        timer = 180f;
         randomTime = Random.Range(25, 60);
         dialogueTime = randomTime;
     }
@@ -37,6 +42,7 @@ public class Timer : MonoBehaviour
             {
                 StopTime();
             }
+            
         }
         if (startDialogue)
         {
@@ -51,9 +57,10 @@ public class Timer : MonoBehaviour
             }
             else { manager.StartDialogue(dialogue); }
 
-            
+            StartTime();
 
         }
+        
         if(manager.timer <= 1)
         {
             manager.inText = false;
@@ -65,7 +72,7 @@ public class Timer : MonoBehaviour
             //StartTime();
         }
 
-
+        UpdateTimerText();
     }
     public void StartTime()
     {
@@ -90,6 +97,15 @@ public class Timer : MonoBehaviour
         randomTime = Random.Range(15, 60);
         dialogueTime = randomTime;
     }
+    public void UpdateTimerText()
+    {
+        float minutes = Mathf.FloorToInt(timer / 60);
+        float seconds = Mathf.FloorToInt(timer % 60);
+        timerText.text = $"{minutes}:{seconds}";
+        outSideTimerText.text = $"{minutes}:{seconds}";
 
-    
+
+    }
+
+
 }

@@ -9,13 +9,14 @@ public class CardScript : MonoBehaviour
     [SerializeField] private Image cardIcon;
     public Sprite hiddenIconSprite;
     public Sprite IconSprite;
+    public GameObject screen;
 
     public bool isSelected;
 
     public CardController controller;
 
-    private float timer = 0.1f;
-    private bool isActive = false;
+    private float timer = 3f;
+    private bool isActive = true;
 
     public void OnCardClick()
     {
@@ -51,21 +52,31 @@ public class CardScript : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        Show();
+        screen = GameObject.Find("PuzzleTwoScreen");
         
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        //if (isActive)
-        //{
-        //    timer -= time.deltaTime;
-        //}
-        //if(timer <= 0)
-        //{
-        //    isActive = false;
-        //    Hide():
-        //}
+        if(screen.active == true)
+        {
+
+            if (isActive)
+            {
+                timer -= Time.deltaTime;
+            }
+
+            if (timer <= 0)
+            {
+                isActive = false;
+                Hide();
+                timer = 2f;
+            }
+        }
+       
+
     }
 }

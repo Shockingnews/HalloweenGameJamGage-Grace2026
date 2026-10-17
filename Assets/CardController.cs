@@ -115,7 +115,7 @@ public class CardController : MonoBehaviour
         if(a.IconSprite == b.IconSprite)
         {
             count++;
-            if(count == 3)
+            if(count == 6)
             {
                 Debug.Log("win");
                 CompletionTracker.wins += 1;

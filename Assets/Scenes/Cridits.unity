@@ -222,6 +222,57 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &330214823
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 330214825}
+  - component: {fileID: 330214824}
+  m_Layer: 0
+  m_Name: manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &330214824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 330214823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 753103901ac915f43845eead6ac87828, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PauseManager
+  PauseUI: {fileID: 0}
+  buttonObject: {fileID: 0}
+  ball: {fileID: 0}
+  maze: {fileID: 0}
+  timer: {fileID: 0}
+  toutrial: {fileID: 0}
+  randomStatic: {fileID: 0}
+--- !u!4 &330214825
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 330214823}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 600, y: 337.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &716408615
 GameObject:
   m_ObjectHideFlags: 0
@@ -328,8 +379,8 @@ RectTransform:
   m_GameObject: {fileID: 1140014495}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 1}
-  m_LocalScale: {x: 0.83623207, y: 1.2297531, z: 0.2459506}
-  m_ConstrainProportionsScale: 1
+  m_LocalScale: {x: 0.822, y: 0.822, z: 0}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 95991181}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -678,7 +729,7 @@ RectTransform:
   m_GameObject: {fileID: 1976506046}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5517081, y: 6.0814247, z: 6.0814247}
+  m_LocalScale: {x: 1, y: 3.57, z: 6.0814247}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1350071363}
@@ -686,7 +737,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -969.83, y: 435}
+  m_AnchoredPosition: {x: 14, y: 87}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1976506048
@@ -732,7 +783,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1976506049}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 330214824}
+        m_TargetAssemblyTypeName: PauseManager, Assembly-CSharp
+        m_MethodName: Quit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1976506049
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -778,3 +841,4 @@ SceneRoots:
   - {fileID: 1740190235}
   - {fileID: 95991181}
   - {fileID: 716408618}
+  - {fileID: 330214825}
