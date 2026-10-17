@@ -3675,7 +3675,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &564703600
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5606,8 +5606,7 @@ MonoBehaviour:
   - 'With pointed fangs I sit and wait; with piercing force I crunch out fate; grabbing
     victims, proclaiming might; physically joining with a single bite. What am I? '
   - I have a neck, but I don't have a head, yet I wear a cap. What am I?
-  - 'With pointed fangs I sit and wait; with piercing force I crunch out fate; grabbing
-    victims, proclaiming might; physically joining with a single bite. What am I? '
+  - What has four legs, a head and one foot?
   - The person who made it doesn't want it, the person who paid for it doesn't need
     it, and the person who needs it doesn't know it. What is it?
   answer:
@@ -8069,7 +8068,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1320725676
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9676,7 +9675,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1745778079
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12354,7 +12353,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2039893241
 MonoBehaviour:
   m_ObjectHideFlags: 0
