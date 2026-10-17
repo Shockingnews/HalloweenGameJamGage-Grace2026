@@ -12,6 +12,7 @@ public class PauseManager : MonoBehaviour
     public MazeInput maze;
     public Timer timer;
     public GameObject toutrial;
+    public AudioSource audio;
 
     public RandomStatic randomStatic;
 
@@ -25,7 +26,7 @@ public class PauseManager : MonoBehaviour
     {
         PauseUI.active = false;
         DisableGame();
-
+        
 
 
     }
@@ -57,6 +58,7 @@ public class PauseManager : MonoBehaviour
         PauseUI.active = false;
         maze.enabled = true;
         randomStatic.activeStaticTimer = true;
+        audio.Play();
         
 
 
@@ -97,6 +99,7 @@ public class PauseManager : MonoBehaviour
                 maze.enabled = false;
                 timer.PuaseTime();
                 randomStatic.activeStaticTimer = false;
+                audio.Stop();
 
             }
             else
@@ -111,6 +114,7 @@ public class PauseManager : MonoBehaviour
                 maze.enabled = true;
                 timer.StartTime();
                 randomStatic.activeStaticTimer = true;
+                audio.Play();
             }
 
         }
